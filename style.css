@@ -54,6 +54,43 @@ body {
   font-size: 14px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.telegram-link {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 50%;
+  color: #2aabee;
+  text-decoration: none;
+  background: rgba(42, 171, 238, 0.12);
+  border: 1px solid rgba(42, 171, 238, 0.45);
+  box-shadow: 0 0 20px rgba(42, 171, 238, 0.16);
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.telegram-link:hover {
+  transform: translateY(-1px);
+  background: rgba(42, 171, 238, 0.22);
+  box-shadow: 0 0 28px rgba(42, 171, 238, 0.28);
+}
+
+.telegram-icon {
+  width: 20px;
+  height: 20px;
+  fill: #2aabee;
+  flex-shrink: 0;
+}
+
 .header-badge {
   padding: 10px 16px;
   border: 1px solid rgba(255, 75, 130, 0.5);
@@ -157,7 +194,6 @@ body {
 .card-button {
   width: 100%;
   min-height: 115px;
-  border: none;
   cursor: pointer;
   color: white;
   background: transparent;
@@ -185,6 +221,39 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+}
+
+.discussion-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 13px;
+  border-radius: 999px;
+  color: #2aabee;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  background: rgba(42, 171, 238, 0.12);
+  border: 1px solid rgba(42, 171, 238, 0.45);
+  box-shadow: 0 0 18px rgba(42, 171, 238, 0.16);
+  backdrop-filter: blur(8px);
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.discussion-button:hover {
+  transform: translateY(-1px);
+  background: rgba(42, 171, 238, 0.2);
+  box-shadow: 0 0 26px rgba(42, 171, 238, 0.28);
+}
+
+.discussion-icon {
+  width: 16px;
+  height: 16px;
+  fill: #2aabee;
   flex-shrink: 0;
 }
 
@@ -336,6 +405,20 @@ tr:last-child td {
     flex-direction: column;
   }
 
+  .header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .telegram-link {
+    width: 42px;
+    height: 42px;
+  }
+
+  .header-badge {
+    width: 100%;
+  }
+
   .hero {
     padding: 22px;
   }
@@ -358,6 +441,12 @@ tr:last-child td {
   .mode-meta {
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .discussion-button {
+    width: 100%;
+    min-height: 42px;
   }
 
   .logo {
