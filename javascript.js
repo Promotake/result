@@ -1,7 +1,12 @@
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyMn5EHC2nSKN7nYKz_y-HSAz8s2WNnyHG5WlfXWqGS4N0EiLQralSz5L5-svmURlTxYg/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
+  refreshOpenPanels();
   loadResults();
+
+  window.addEventListener("resize", () => {
+    refreshOpenPanels();
+  });
 });
 
 async function loadResults() {
@@ -18,6 +23,8 @@ async function loadResults() {
     </tr>
   `;
 
+  refreshOpenPanels();
+
   try {
     const results = await loadResultsJsonp();
 
@@ -29,6 +36,7 @@ async function loadResults() {
       `;
 
       updateParticipantsCount(0);
+      refreshOpenPanels();
       return;
     }
 
@@ -44,6 +52,7 @@ async function loadResults() {
 
     renderResults(sortedResults);
     updateParticipantsCount(sortedResults.length);
+    refreshOpenPanels();
 
   } catch (error) {
     console.error("Ошибка загрузки результатов:", error);
@@ -57,6 +66,7 @@ async function loadResults() {
     `;
 
     updateParticipantsCount("Ошибка");
+    refreshOpenPanels();
   }
 }
 
@@ -140,7 +150,35 @@ function toggleCard(button) {
     return;
   }
 
-  card.classList.toggle("open");
+  const panel = card.querySelector(".panel");
+
+  if (!panel) {
+    return;
+  }
+
+  const isOpen = card.classList.contains("open");
+
+  if (isOpen) {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+
+    requestAnimationFrame(() => {
+      panel.style.maxHeight = "0px";
+      card.classList.remove("open");
+    });
+
+    return;
+  }
+
+  card.classList.add("open");
+  panel.style.maxHeight = panel.scrollHeight + "px";
+}
+
+function refreshOpenPanels() {
+  const openPanels = document.querySelectorAll(".result-card.open .panel");
+
+  openPanels.forEach(panel => {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+  });
 }
 
 function escapeHtml(value) {
