@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Promotake Results</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="brand">
+        <img src="img/logo.jpg" alt="Promotake logo" class="logo" />
+
+        <div class="brand-text">
+          <h1>Promotake</h1>
+          <p>Таблица результатов</p>
+        </div>
+      </div>
+
+      <div class="header-badge">Brawl Stars Exam</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Результаты <span>участников</span></h2>
+        <p>
+          Выбери нужный режим или экзамен. В открытой вкладке участники отображаются
+          по баллам: сверху лучший результат, ниже остальные.
+        </p>
+      </div>
+    </section>
+
+    <section class="results-list">
+      <article class="result-card exam-card open">
+        <button class="card-button" onclick="toggleCard(this)">
+          <div class="mode-info">
+            <h3>Экзамен по Brawl Stars</h3>
+            <p>Основной рейтинг участников по итоговым баллам</p>
+          </div>
+
+          <div class="mode-meta">
+            <span class="status">Загрузка...</span>
+            <span class="arrow">⌄</span>
+          </div>
+        </button>
+
+        <div class="panel">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Место</th>
+                  <th>Участник</th>
+                  <th>Игровой ник</th>
+                  <th>Баллы</th>
+                </tr>
+              </thead>
+
+              <tbody id="resultsBody">
+                <tr>
+                  <td colspan="4" class="loading-row">Загрузка результатов...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="result-card empty-card">
+        <button class="card-button">
+          <div class="mode-info">
+            <h3>Турнир 1x1</h3>
+            <p>Скоро появятся результаты отдельного режима</p>
+          </div>
+
+          <div class="mode-meta">
+            <span class="status">Скоро</span>
+            <span class="arrow">⌄</span>
+          </div>
+        </button>
+      </article>
+
+      <article class="result-card empty-card">
+        <button class="card-button">
+          <div class="mode-info">
+            <h3>Командный режим</h3>
+            <p>Будущая таблица для командных игр и испытаний</p>
+          </div>
+
+          <div class="mode-meta">
+            <span class="status">Скоро</span>
+            <span class="arrow">⌄</span>
+          </div>
+        </button>
+      </article>
+    </section>
+
+    <footer class="footer">
+      © Promotake Results
+    </footer>
+  </main>
+
+  <script src="JavaScript.js"></script>
+</body>
+</html>
