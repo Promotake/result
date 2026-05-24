@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="icon" type="image/png" href="img/logo.png">
   <title>Promotake Results</title>
 
@@ -21,7 +22,21 @@
         </div>
       </div>
 
-      <div class="header-badge">Последний ивент: Экзамен по Brawl Stars</div>
+      <div class="header-actions">
+        <a
+          href="https://t.me/promotake_off"
+          class="telegram-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Telegram канал Promotake"
+        >
+          <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21.8 4.2 18.6 19.4c-.2 1-.8 1.2-1.6.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5L20.5 3.1c.8-.3 1.6.2 1.3 1.1Z"/>
+          </svg>
+        </a>
+
+        <div class="header-badge">Последний ивент: Экзамен по Brawl Stars</div>
+      </div>
     </header>
 
     <section class="hero">
@@ -36,17 +51,30 @@
 
     <section class="results-list">
       <article class="result-card exam-card">
-        <button class="card-button" onclick="toggleCard(this)">
+        <div class="card-button" onclick="toggleCard(this)">
           <div class="mode-info">
             <h3>Экзамен по Brawl Stars</h3>
             <p>Основной рейтинг участников по итоговым баллам</p>
           </div>
 
           <div class="mode-meta">
+            <a
+              href="https://t.me/+8kemMng98Vo5NGRi"
+              class="discussion-button"
+              target="_blank"
+              rel="noopener noreferrer"
+              onclick="event.stopPropagation();"
+            >
+              <svg class="discussion-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21.8 4.2 18.6 19.4c-.2 1-.8 1.2-1.6.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5L20.5 3.1c.8-.3 1.6.2 1.3 1.1Z"/>
+              </svg>
+              <span>Обсуждение</span>
+            </a>
+
             <span class="status">Загрузка...</span>
             <span class="toggle-icon"></span>
           </div>
-        </button>
+        </div>
 
         <div class="panel">
           <div class="table-wrap">
@@ -71,7 +99,7 @@
       </article>
 
       <article class="result-card empty-card">
-        <button class="card-button">
+        <div class="card-button">
           <div class="mode-info">
             <h3>Скоро</h3>
             <p>....</p>
@@ -81,11 +109,11 @@
             <span class="status">Скоро</span>
             <span class="toggle-icon"></span>
           </div>
-        </button>
+        </div>
       </article>
 
       <article class="result-card empty-card">
-        <button class="card-button">
+        <div class="card-button">
           <div class="mode-info">
             <h3>Скоро</h3>
             <p>....</p>
@@ -95,7 +123,7 @@
             <span class="status">Скоро</span>
             <span class="toggle-icon"></span>
           </div>
-        </button>
+        </div>
       </article>
     </section>
 
@@ -104,6 +132,6 @@
     </footer>
   </main>
 
-  <script src="JavaScript.js"></script>
+  <script src="javascript.js?v=13"></script>
 </body>
 </html>
